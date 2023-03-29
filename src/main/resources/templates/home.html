@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://thymeleaf.org">
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  font-size: large;
+  font-style: bold;
+}
+a{
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: large;
+  font-style: italic;
+}
+h1{
+    color: black;
+    font-size: 2rem;
+}
+
+input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    background-color: #aabdb4d7;
+    opacity: calc(0.65);
+    color: rgba(53, 7, 35, 0.986);
+  }
+  input[type=text]:hover {
+
+  --_p2:100%;
+  transition: background-position .0s, background-size 1s;
+  }
+
+
+  input[type=text]{
+    --c:  #0c8d5741; /* the color*/
+
+
+    box-shadow: 0 0 0 .2em inset var(--c);
+    --_g1: linear-gradient(var(--c)  0 0) no-repeat;
+    background:
+
+      var(--_g1) calc(var(--_p2,100%) - 100%) 0%,
+      var(--_g1) calc(var(--_p2,0%) - 100%) 100%;
+
+    background-size: 100% calc(var(--_p2,1%) + .100%);
+    outline-offset: .1em;
+    transition: background-size .4s, background-position 0s .4s;
+  }
+body{
+    width: 100%;
+    min-height: 100vh;
+    background-color: rgba(95, 160, 146, 0.342);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.header{
+    color: rgba(29, 27, 27, 0.904);
+    width:80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.all{
+  width: 90%;
+  min-height: 50vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background-color: #e60404;
+}
+.all:hover {
+  --_p1:99%;
+  transition: background-position .1s, background-size 2s;
+}
+.all {
+  --c1: #6fbba860;
+  --c:  #ffffffe5; /* the color*/
+  --c2:   #000000;
+  box-shadow: 0 0 0 .1em inset var(--c2);
+  --_g2: linear-gradient(var(--c1) 0 0) ;
+  --_g1: linear-gradient(var(--c) 0 0) no-repeat;
+  background:
+  var(--_g2) calc(var(--_p1,100%) - 0%) 0%,
+    var(--_g1) calc(var(--_p1,100%) - 100%) 0%,
+    var(--_g1) calc(100% - var(--_p1,0%)) 0%,
+    var(--_g1) calc(var(--_p1,0%) - 100%) 100%,
+    var(--_g1) calc(100% - var(--_p1,0%)) 100%;
+  background-size: 100% calc(var(--_p1,0%) + .100%);
+  outline-offset: .1em;
+}
+
+.button {
+  --c:  #35a3a7b2; /* the color*/
+
+  box-shadow: 0 0 0 .2em inset var(--c);
+  --_g: linear-gradient(var(--c) 0 0) no-repeat;
+  background:
+    var(--_g) calc(var(--_p,0%) - 100%) 0%,
+    var(--_g) calc(200% - var(--_p,0%)) 0%,
+    var(--_g) calc(var(--_p,0%) - 100%) 100%,
+    var(--_g) calc(200% - var(--_p,0%)) 100%;
+  background-size: 50.5% calc(var(--_p,0%)/2 + .5%);
+  outline-offset: .1em;
+  transition: background-size .4s, background-position 0s .4s;
+  letter-spacing: 0.33rem;
+
+
+}
+  .button:hover {
+    --_p: 100%;
+    transition: background-position .4s, background-size 0s;
+  }
+  button:active {
+    box-shadow: 0 0 9e9q inset rgba(236, 0, 0, 0.185);
+    background-color: var(--c);
+    color: #ffffff;
+  }
+
+  .button {
+    font-family: system-ui, sans-serif;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: .1em .6em;
+    font-weight: bold;
+    border: none;
+
+  }
+
+  label{
+     font-family: system-ui, sans-serif;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: .1em .6em;
+    font-weight: bold;
+    border: none;
+    width: 80%;
+  }
+
+
+#count{
+  visibility: hidden;
+
+}
+
+
+#panel1{
+
+
+    margin: 10%;}
+input{
+margin: 1%;
+  width: 50%;
+ }
+</style>
+<script>
+
+var a=2;
+
+
+  function arttir(){
+    a++;
+    document.getElementById("count").value = a;
+ }
+  function textBox() {
+        var i =arttir();
+        var nesne = document.createElement("input");
+        nesne.setAttribute("type", "text");
+        nesne.setAttribute("name", "sentence"+a);
+        nesne.setAttribute("value", "Enter Text");
+        var panelDiv = document.getElementById("panel1");
+        panelDiv.append(nesne);
+        var input =document.getElementByName("sentence"+a);
+    }
+    function birlestir(){
+
+        var input = document.getElementByName("sentence1");
+        var input1 =document.getElementByName("sentence2");
+        alert(input.value+input1.value);
+}
+</script>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>YAZLAB2_1</title>
+</head>
+
+<img src="kou.png">
+
+<body>
+
+<div class="header">
+    <h1>TEXT OPERATIONS</h1>
+</div>
+
+<div class="all">
+
+    <form action="save" method="GET">
+        <table id="panel1">
+            <tr>
+                <td><input value="Enter Text" type="text" name="sentence1"></input></td>
+            </tr>
+            <tr>
+                <td><input value="Enter Text" type="text" name="sentence2"></input></td>
+            </tr>
+            <tr>
+                <td><input id ="count" value=2 type="number" name="count"></input></td>
+            </tr>
+            <tr>
+                <div class="buttons">
+                    <input value="ADD" class="button" type="button" onclick="textBox()"></input>
+                    <input class="button" type="reset" value="RESET"></input>
+                    <input class="button" type="submit" value="SAVE&COMBINE"></input>
+
+                </div>
+            </tr>
+        </table>
+    </form>
+
+
+</div>
+</body>
+</html>
